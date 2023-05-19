@@ -42,9 +42,9 @@ fetch(url + "/all?limit=9&country=India")
     if (data.success) {
       let i = "";
       data.data.map((item) => {
-        i += `<div class="my-card">
+        i += `<a href="/play/index.html?id=${item.tmdb_id}" class="my-card">
       <img src="${item.poster_path}" class="my-card-img"/>
-      </div>`;
+      </a>`;
       });
       document.querySelector(".indian").innerHTML = i;
     }
@@ -59,9 +59,9 @@ fetch(url + "/all?limit=9")
     if (data.success) {
       let i = "";
       data.data.map((item) => {
-        i += `<div class="my-card">
+        i += `<a href="/play/index.html?id=${item.tmdb_id}" class="my-card">
       <img src="${item.poster_path}" class="my-card-img"/>
-      </div>`;
+      </a>`;
       });
       document.querySelector(".foreign").innerHTML = i;
     }
